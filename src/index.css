@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+:root {
+  --bg-header: url('/bg.jpg');
+}
+
+@layer utilities {
+  .bg-header {
+    background-image: var(--bg-header);
+  }
+}
