@@ -1,69 +1,94 @@
-# React + TypeScript + Vite
+# Buscador de Bebidas - React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web para buscar recetas de bebidas, guardar favoritas y generar recetas usando inteligencia artificial. Está construido con un stack moderno de tecnologías frontend.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19**: Librería principal para la construcción de interfaces de usuario.
+- **TypeScript**: Tipado estático para mayor robustez y mantenibilidad.
+- **Vite**: Herramienta de desarrollo y bundler ultrarrápido.
+- **Tailwind CSS**: Framework de utilidades CSS para estilos rápidos y responsivos.
+- **Zustand**: Manejo de estado global simple y eficiente.
+- **Zod**: Validación y tipado de esquemas de datos.
+- **Headless UI**: Componentes accesibles y sin estilos para React.
+- **Heroicons**: Íconos SVG listos para usar en React.
+- **Axios**: Cliente HTTP para consumir APIs.
+- **React Router DOM**: Enrutamiento declarativo para aplicaciones React.
+- **@openrouter/ai-sdk-provider** y **ai**: Integración con modelos de IA para generación de recetas.
 
-## Expanding the ESLint configuration
+## Características
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Búsqueda de recetas** por nombre, ingrediente y categoría.
+- **Visualización de detalles** de cada bebida en un modal.
+- **Favoritos**: Guarda y elimina recetas favoritas (persistencia en localStorage).
+- **Notificaciones**: Mensajes de éxito y error.
+- **Generación de recetas con IA**: Solicita recetas personalizadas usando inteligencia artificial.
+- **Diseño responsive** y moderno.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Estructura del proyecto
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+.
+├── public/
+│   ├── bg.jpg
+│   └── logo.svg
+├── src/
+│   ├── components/
+│   ├── layouts/
+│   ├── lib/
+│   ├── pages/
+│   ├── schemas/
+│   ├── services/
+│   ├── stores/
+│   ├── types/
+│   ├── index.css
+│   ├── main.tsx
+│   └── router.tsx
+├── .env
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Instalación y uso
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clona el repositorio**  
+   ```sh
+   git clone https://github.com/tu-usuario/bebidas-react-typescript.git
+   cd bebidas-react-typescript
+   ```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Instala las dependencias**  
+   ```sh
+   npm install
+   ```
+
+3. **Configura las variables de entorno**  
+   Crea un archivo `.env` y agrega tu clave de OpenRouter:
+   ```
+   VITE_OPENROUTER_KEY=tu_clave
+   ```
+
+4. **Inicia el servidor de desarrollo**  
+   ```sh
+   npm run dev
+   ```
+
+5. **Abre la aplicación**  
+   Ve a [http://localhost:5173](http://localhost:5173) en tu navegador.
+
+## Scripts útiles
+
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Compila la aplicación para producción.
+- `npm run preview`: Previsualiza la build de producción.
+- `npm run lint`: Ejecuta el linter.
+
+## Licencia
+
+MIT
+
+---
+
+Desarrollado por Ricdev
